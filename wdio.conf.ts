@@ -1,3 +1,5 @@
+// import { execSync } from 'child_process';
+
 export const config: WebdriverIO.Config = {
     //
     // ====================
@@ -9,8 +11,8 @@ export const config: WebdriverIO.Config = {
     //runner: 'local',
     tsConfigPath: './tsconfig.json',
 
-    
-    //
+
+
     // ==================
     // Specify Test Files
     // ==================
@@ -26,14 +28,24 @@ export const config: WebdriverIO.Config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.ts'
+        ['./test/specs/auth.spec.ts',
+        './test/specs/home.spec.ts']
+        //
+        // './test/specs/**/*.ts'
     ],
 
     // test in suite 
-    suites: {
-        auth: [
-            './test/specs/auth.spec.ts'
-        ]},
+    // suites: {
+    //     auth: [
+    //         './test/specs/auth.spec.ts'
+    //     ],
+
+    //     home: [
+    //         './test/specs/home.spec.ts'],
+    // },
+
+            
+    // retries: 2,  // Retry a test 2 times before marking it as failed
 
         
     // Patterns to exclude.

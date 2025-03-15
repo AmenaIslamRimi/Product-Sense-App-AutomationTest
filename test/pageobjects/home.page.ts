@@ -1,4 +1,4 @@
-// import { browser } from '@wdio/globals'
+import { browser } from '@wdio/globals'
 
 /**
 * main page object containing all methods, selectors and functionality
@@ -7,28 +7,41 @@
 
 class HomePage {
 
-    async getTitle() {
-        const selector = 'new UiSelector().text("হ্যালো ping pong Testy!")';
-        const title = await $(`android=${selector}`);
-        return await title.getText();
+    get checkInText() {
+        return $('//android.widget.TextView[@text="চেক ইন করতে চান?"]');
     }
 
-    // async getImgUploadTxt(){
-    //     const selector = 'new UiSelector().text("ছবি আপলোড বাকি আছে:")';
-    //     const imgUploadTxt = await $(`android=${selector}`);
-    //     return await imgUploadTxt.getText();
-    // }
+    get startSessionButton() {
+        return $('//android.widget.TextView[@text="সেশন শুরু করুন"]');
+    }
 
-    // async getRegShopList(){
-    //     const selector = 'new UiSelector().text("আজকের নিবন্ধিত দোকান:")';
-    //     const regShopList = await $(`android=${selector}`);
-    //     return await regShopList.getText();
-    // }
+    get checkInTitle() {
+        return $('//android.widget.TextView[@text="চেক ইনের সময়"]');
+    }
 
-    // async getTitle() {
-    //     const title = await $('android.widget.TextView');
-    //     return title;
-    // }
+    async getTitle() {
+        const selector = 'new UiSelector().text("হ্যালো ping pong testy!")';
+        const title = await $(`android=${selector}`);
+        return await title.getText();
+
+        await browser.pause(5000);
+    }
+
+    async checkInTextIsVisible() {
+        const checkInText = await this.checkInText;
+        return await checkInText.getText();
+    }
+
+    async startSession() {
+        const startSessionButton = await this.startSessionButton;
+        await startSessionButton.click();
+    }
+
+    async checkInGetTitle() {
+        const checkInTitle = await this.checkInTitle;
+        return await checkInTitle.getText();
+    }
+
 }
 
 export default new HomePage();

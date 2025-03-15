@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "(//android.widget.TextView[@text=\"আপনার অ্যাকাউন্ট এ লগিন করুন\"])[1]"
+}

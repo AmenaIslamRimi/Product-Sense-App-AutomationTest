@@ -69,10 +69,26 @@ class LoginPage {
         await driver.pause(5000);
     }
 
+    async errorMgs () {
+        const errorMgs = await $('//android.widget.Toast[@text="This number is not registered in the system"]');
+        return await errorMgs.getText();
+    }
+
+    async successMgs () {
+        const successMgs = await $('//android.widget.Toast[@text="OTP sent successfully"]');
+        return await successMgs.getText();
+    }
+
     async otpTxt () {
         const otpSendTxt = await $('//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[3]');
         return await otpSendTxt.getText();
     }
+
+    // async inputOtpAfterValidTime (otp: string) {
+    //     await driver.pause(1500);
+    //     await this.inputOTP.setValue(otp);
+    //     await this.btnLogin.click();
+    // }
 
     async inputOtp (otp: string) {
         await this.inputOTP.setValue(otp);

@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//android.widget.TextView[@text=\"চেক ইন করতে চান?\"]"
+}
