@@ -57,6 +57,22 @@ class LoginPage {
         return $('//android.widget.TextView[@text="লগ ইন"]');
     }
 
+    get camPermission () {
+        return $('//android.widget.TextView[@text="ক্যামেরা ব্যবহারে অনুমতি প্রয়োজন"]');
+    }
+
+    get locationPermission () {
+        return $('//android.widget.TextView[@text="লোকেশন ব্যবহারে অনুমতি প্রয়োজন"]');
+    }
+
+    get allowBtn () {
+        return $('id=com.android.permissioncontroller:id/permission_allow_foreground_only_button');
+    }
+
+    // get allowTxt () {
+    //     return $('android=new UiSelector().resourceId("com.android.permissioncontroller:id/permission_allow_foreground_only_button")');
+    // }
+
     async loginTxt(){
         const loginTxt = await $('(//android.widget.TextView[@text="আপনার অ্যাকাউন্ট এ লগিন করুন"])[1]');
         return await loginTxt.getText();
@@ -82,6 +98,21 @@ class LoginPage {
     async otpTxt () {
         const otpSendTxt = await $('//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[3]');
         return await otpSendTxt.getText();
+    }
+
+    async camPermissionTxt() {
+        const camPermission = await this.camPermission;
+        return await camPermission.getText();
+    }
+
+    async locationPermissionTxt () {
+        const locationPermission = await this.locationPermission;
+        return await locationPermission.getText();
+    }
+
+    async allowBtnTxt () {
+        const allowBtn = await this.allowBtn;
+        return await allowBtn.getText();
     }
 
     // async inputOtpAfterValidTime (otp: string) {

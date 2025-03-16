@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//android.widget.TextView[@text=\"ক্যামেরা ব্যবহারে অনুমতি প্রয়োজন\"]"
+}

@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "com.android.permissioncontroller:id/permission_allow_foreground_only_button"
+}

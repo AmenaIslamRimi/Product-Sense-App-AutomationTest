@@ -38,8 +38,8 @@ class HomePage {
     }
 
     async checkInGetTitle() {
-        const checkInTitle = await this.checkInTitle;
-        return await checkInTitle.getText();
+        const checkInTxt = await this.checkInTitle;
+        return await checkInTxt.getText();
     }
 
 }

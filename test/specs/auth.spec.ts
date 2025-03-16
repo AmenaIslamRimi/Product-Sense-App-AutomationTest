@@ -27,6 +27,30 @@ describe('Auth', () => {
         await loginPage.inputOtp('111111');
     });
 
+    it('should accept app cam permission', async () => {
+        const camPermissionText = await loginPage.camPermissionTxt();
+        if (camPermissionText === 'ক্যামেরা ব্যবহারে অনুমতি প্রয়োজন') {
+            await loginPage.camPermission.click();
+            
+            const allowText = await loginPage.allowBtnTxt();
+            expect(allowText).toBe('While using the app');
+    
+            await loginPage.allowBtn.click();
+        }
+    });
+    
+    it('should accept app location permission', async () => {
+        const locationPermissionText = await loginPage.locationPermissionTxt();
+        if (locationPermissionText === 'লোকেশন ব্যবহারে অনুমতি প্রয়োজন') {
+            await loginPage.locationPermission.click();
+            
+            const allowText = await loginPage.allowBtnTxt();
+            expect(allowText).toBe('While using the app');
+    
+            await loginPage.allowBtn.click();
+        }
+    });
+
     it('should show the home page title', async () => {
         expect(await homePage.getTitle()).toHaveAttr('হ্যালো ping pong testy!');
     });
