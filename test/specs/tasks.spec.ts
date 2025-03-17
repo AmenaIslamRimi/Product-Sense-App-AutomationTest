@@ -8,7 +8,20 @@ describe('Tasks', () => {
     });
 
     // it('should search for a task', async () => {
-    //     await tasksPage.
+    //     await tasksPage.getshopName().then(async (shopName) => {
+    //     console.log(`Searching for: ${shopName}`);
+    //     await tasksPage.searchTask(shopName);
+    //     console.log(`Searching for: ${shopName}`);
+    //     });
     // });
+
+    it('should search for a task', async () => {
+        await tasksPage.searchTask('Test 100');
+        // clear the search field
+        await tasksPage.clearSearch();
+        
+    });
+
+
 });
 
