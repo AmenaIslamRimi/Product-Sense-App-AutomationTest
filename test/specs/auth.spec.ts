@@ -1,7 +1,6 @@
 import { expect } from '@wdio/globals'
 import homePage from '../pageobjects/home.page';
 import loginPage from '../pageobjects/login.page';
-// import SecurePage from '../pageobjects/secure.page'
 
 describe('Auth', () => {
     
@@ -52,7 +51,7 @@ describe('Auth', () => {
     });
 
     it('should show the home page title', async () => {
-        expect(await homePage.getTitle()).toHaveAttr('হ্যালো ping pong testy!');
+        expect(await homePage.getTitle()).toHaveAttr('হ্যালো ping pong!');
     });
 
 });

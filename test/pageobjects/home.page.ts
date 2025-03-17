@@ -1,10 +1,3 @@
-import { browser } from '@wdio/globals'
-
-/**
-* main page object containing all methods, selectors and functionality
-* that is shared across all page objects
-*/
-
 class HomePage {
 
     get checkInText() {
@@ -19,17 +12,21 @@ class HomePage {
         return $('//android.widget.TextView[@text="চেক ইনের সময়"]');
     }
 
+    
+
     async getTitle() {
-        const selector = 'new UiSelector().text("হ্যালো ping pong testy!")';
+        const selector = 'new UiSelector().text("হ্যালো ping pong!")';
         const title = await $(`android=${selector}`);
         return await title.getText();
-
-        await browser.pause(5000);
     }
 
     async checkInTextIsVisible() {
         const checkInText = await this.checkInText;
         return await checkInText.getText();
+    }
+
+    async startSessionButtonTxt() {
+        return await this.startSessionButton.getText();
     }
 
     async startSession() {
