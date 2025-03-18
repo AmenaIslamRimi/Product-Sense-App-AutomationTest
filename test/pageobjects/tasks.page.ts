@@ -10,6 +10,10 @@ class tasksPage {
     get tasksList() {
         return $('//android.widget.ScrollView/android.view.ViewGroup');
     }
+
+    get taskScroll() {
+        return $('//android.widget.ScrollView');
+    }
     
     // get taskListItems() {
     //     return $$('//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]');
@@ -33,6 +37,12 @@ class tasksPage {
 
     async clearSearch() {
         await this.searchOption.clearValue();
+    }
+
+    // task list scroll up and down
+
+    async taskListElem() {
+        return await this.taskScroll;
     }
 }
 

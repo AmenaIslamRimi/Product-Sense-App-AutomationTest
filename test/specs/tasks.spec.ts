@@ -22,6 +22,16 @@ describe('Tasks', () => {
         
     });
 
+    it('should scroll the task list', async () => {
+        // const taskList = await tasksPage.taskListElem();
+        await tasksPage.taskScroll.scrollIntoView({
+            direction: 'down',
+            maxScrolls: 5,
+            scrollableElement: $('#scrollable')
+        });
+
+    });
+
 
 });
 

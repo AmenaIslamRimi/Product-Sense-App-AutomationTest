@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//android.widget.Toast[@text=\"This number is not registered in the system\"]"
-}

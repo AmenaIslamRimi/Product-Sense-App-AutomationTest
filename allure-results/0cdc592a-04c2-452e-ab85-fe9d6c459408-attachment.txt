@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "new UiSelector().resourceId(\"com.android.permissioncontroller:id/permission_allow_foreground_only_button\")"
-}
